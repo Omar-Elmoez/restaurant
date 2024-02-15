@@ -1,5 +1,7 @@
 // Challenge / Exercise
 
+import Routes from "./routes";
+
 // 1. Add five new (dummy) page components (content can be simple <h1> elements)
 //    - HomePage
 //    - EventsPage
@@ -21,7 +23,7 @@
 // BONUS: Add another (nested) layout route that adds the <EventNavigation> component above all /events... page components
 
 function App() {
-  return <div></div>;
+  return <Routes />
 }
 
 export default App;
