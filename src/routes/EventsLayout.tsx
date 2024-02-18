@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import EventsNavigation from "../components/events-navigation/EventsNavigation";
+import { EventsNavigation } from "../components";
 
 function EventsLayout() {
   return (

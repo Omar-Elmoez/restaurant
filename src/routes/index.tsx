@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { EditEvent, EventDetails, Events, Home, NewEvent } from "../pages";
 import RootLayout from "./RootLayout";
 import EventsLayout from "./EventsLayout";
+import EventsLoader from "../loaders/Events";
 
 const Routes = () => {
   // const MainRoutes = [
@@ -76,6 +77,7 @@ const Routes = () => {
             {
               index: true,
               element: <Events />,
+              loader: EventsLoader,
             },
             {
               path: ":id",
