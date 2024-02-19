@@ -3,5 +3,13 @@ import EventItem from "./event-item/EventItem";
 import EventsList from "./events-list/EventsList";
 import EventsNavigation from "./events-navigation/EventsNavigation";
 import MainNavigation from "./main-navigation/MainNavigation";
+import PageContent from "./page-content/PageContent";
 
-export { EventForm, EventItem, EventsList, EventsNavigation, MainNavigation };
+export {
+  EventForm,
+  EventItem,
+  EventsList,
+  EventsNavigation,
+  MainNavigation,
+  PageContent,
+};
