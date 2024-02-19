@@ -3,6 +3,7 @@ import { EditEvent, ErrorPage, EventDetails, Events, Home, NewEvent } from "../p
 import RootLayout from "./RootLayout";
 import EventsLayout from "./EventsLayout";
 import EventsLoader from "../loaders/Events";
+import SelectedEventLoader from "../loaders/SelectedEvent";
 
 const Routes = () => {
   // const MainRoutes = [
@@ -83,6 +84,7 @@ const Routes = () => {
             {
               path: ":id",
               element: <EventDetails />,
+              loader: SelectedEventLoader,
             },
             {
               path: "new",

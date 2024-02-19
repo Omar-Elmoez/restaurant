@@ -3,7 +3,7 @@ import Data from '../../types/data.types';
 import classes from './EventsList.module.css';
 
 function EventsList({ events }: Data ) {
-  console.log(events)
+
   return (
     <div className={classes.events}>
       <h1>All Events</h1>

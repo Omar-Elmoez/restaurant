@@ -1,15 +1,10 @@
-import { useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import { EventItem } from "../components";
+import Event from "../types/event.types";
 
 function EventDetails() {
-
-  const { id } = useParams();
-
-  return (
-    <div>
-      <h1>EventDetails</h1>
-      <p>Event ID: {id}</p>
-    </div>
-  );
+  const { event } = useLoaderData() as { event: Event };
+  return <EventItem event={event} />;
 }
 
 export default EventDetails;
