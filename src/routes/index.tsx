@@ -4,6 +4,7 @@ import RootLayout from "./RootLayout";
 import EventsLayout from "./EventsLayout";
 import EventsLoader from "../loaders/Events";
 import EventDetailsLoader from "../loaders/EventDetails";
+import NewEventAction from "../actions/NewEvent";
 
 const Routes = () => {
   // const MainRoutes = [
@@ -99,6 +100,7 @@ const Routes = () => {
             {
               path: "new",
               element: <NewEvent />,
+              action: NewEventAction,
             },
           ],
         },
