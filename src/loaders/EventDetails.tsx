@@ -1,6 +1,6 @@
 import { LoaderFunction, json } from "react-router-dom";
 
-const SelectedEventLoader: LoaderFunction<{ params: { id: string } }> = async ({
+const EventDetailsLoader: LoaderFunction<{ params: { id: string } }> = async ({
   params,
 }) => {
 
@@ -14,4 +14,4 @@ const SelectedEventLoader: LoaderFunction<{ params: { id: string } }> = async ({
   return response;
 };
 
-export default SelectedEventLoader;
+export default EventDetailsLoader;
