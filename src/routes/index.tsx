@@ -5,6 +5,7 @@ import EventsLayout from "./EventsLayout";
 import EventsLoader from "../loaders/Events";
 import EventDetailsLoader from "../loaders/EventDetails";
 import NewEventAction from "../actions/NewEvent";
+import DeleteEvent from "../actions/DeleteEvent";
 
 const Routes = () => {
   // const MainRoutes = [
@@ -89,7 +90,8 @@ const Routes = () => {
               children: [
                 {
                   index: true,
-                  element: <EventDetails />,               
+                  element: <EventDetails />,    
+                  action: DeleteEvent           
                 },
                 {
                   path: "edit",
