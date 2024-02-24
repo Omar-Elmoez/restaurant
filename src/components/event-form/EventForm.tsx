@@ -22,6 +22,7 @@ function EventForm({ event }: { event?: Event }) {
 
   return (
     <Form method="post" className={classes.form}>
+      {data && data.errors && <p style={{ color: "red", fontWeight: "bold", textAlign: "center" }}>{data.message}</p>}
       <p>
         <label htmlFor="title">Title</label>
         <input
