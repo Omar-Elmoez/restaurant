@@ -96,6 +96,7 @@ const Routes = () => {
                 {
                   path: "edit",
                   element: <EditEvent />,
+                  action: NewEventAction
                 },
               ]
             },

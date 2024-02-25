@@ -1,6 +1,6 @@
 import { ActionFunction, json, redirect } from "react-router-dom";
 
-const NewEventAction: ActionFunction = async ({ request }) => {
+const NewEventAction: ActionFunction = async ({ request, params }) => {
   const data = await request.formData();
   
   const eventData = {
@@ -10,8 +10,14 @@ const NewEventAction: ActionFunction = async ({ request }) => {
     image: data.get('image'),
   }
 
-  const response = await fetch('http://localhost:8080/events', {
-    method: 'POST',
+  let url = 'http://localhost:8080/events'
+
+  if (request.method === 'PATCH') {
+    url = 'http://localhost:8080/events/' + params.id
+  }
+
+  const response = await fetch(url, {
+    method: request.method,
     headers: {
       'Content-Type': 'application/json'
     },

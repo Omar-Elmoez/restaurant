@@ -9,7 +9,7 @@ import classes from "./EventForm.module.css";
 import Event from "../../types/event.types";
 import ValidationResponse from "../../types/ValidationResponse";
 
-function EventForm({ event }: { event?: Event }) {
+function EventForm({ event, method }: { event?: Event, method: 'post' | 'patch' }) {
   const navigate = useNavigate();
 
   const data = useActionData() as ValidationResponse;
@@ -21,8 +21,12 @@ function EventForm({ event }: { event?: Event }) {
   }
 
   return (
-    <Form method="post" className={classes.form}>
-      {data && data.errors && <p style={{ color: "red", fontWeight: "bold", textAlign: "center" }}>{data.message}</p>}
+    <Form method={method} className={classes.form}>
+      {data && data.errors && (
+        <p style={{ color: "red", fontWeight: "bold", textAlign: "center" }}>
+          {data.message}
+        </p>
+      )}
       <p>
         <label htmlFor="title">Title</label>
         <input

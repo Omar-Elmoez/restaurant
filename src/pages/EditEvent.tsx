@@ -4,7 +4,7 @@ import Event from "../types/event.types";
 
 function EditEvent() {
   const { event } = useRouteLoaderData('event-detail') as { event: Event };
-  return <EventForm event={event} />;
+  return <EventForm event={event} method="patch" />;
 }
 
 export default EditEvent;
