@@ -5,7 +5,9 @@ const NewsletterAction: ActionFunction = async ({ request }) => {
   const email = data.get('email');
 
   // send to backend newsletter server ...
-  console.log(email);
+  if (!email) {
+    return { message: 'Please enter your email..' };
+  }
   return { message: 'Signup successful!' };
 }
 
