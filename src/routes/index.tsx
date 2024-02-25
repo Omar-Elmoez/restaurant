@@ -1,11 +1,12 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { EditEvent, ErrorPage, EventDetails, Events, Home, NewEvent } from "../pages";
+import { EditEvent, ErrorPage, EventDetails, Events, Home, NewEvent, NewsletterPage } from "../pages";
 import RootLayout from "./RootLayout";
 import EventsLayout from "./EventsLayout";
 import EventsLoader from "../loaders/Events";
 import EventDetailsLoader from "../loaders/EventDetails";
 import NewEventAction from "../actions/NewEvent";
 import DeleteEvent from "../actions/DeleteEvent";
+import NewsletterAction from "../actions/Newsletter";
 
 const Routes = () => {
   // const MainRoutes = [
@@ -106,6 +107,11 @@ const Routes = () => {
               action: NewEventAction,
             },
           ],
+        },
+        {
+          path: 'newsletter',
+          element: <NewsletterPage />,
+          action: NewsletterAction,
         },
       ],
     },
