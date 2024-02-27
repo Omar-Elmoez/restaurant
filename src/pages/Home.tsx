@@ -1,8 +1,10 @@
+import { PageContent } from "../components";
+
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <PageContent title="Welcome!">
+      <p>Welcome to our website! We hope you enjoy your time here!</p>
+    </PageContent>
   );
 }
 
