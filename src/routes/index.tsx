@@ -7,6 +7,7 @@ import EventDetailsLoader from "../loaders/EventDetails";
 import NewEventAction from "../actions/NewEvent";
 import DeleteEvent from "../actions/DeleteEvent";
 import NewsletterAction from "../actions/Newsletter";
+import AuthenticationPage from "../pages/Authentication";
 
 const Routes = () => {
   // const MainRoutes = [
@@ -112,6 +113,10 @@ const Routes = () => {
           path: 'newsletter',
           element: <NewsletterPage />,
           action: NewsletterAction,
+        },
+        {
+          path: 'auth',
+          element: <AuthenticationPage />,
         },
       ],
     },

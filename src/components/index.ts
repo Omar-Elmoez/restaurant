@@ -5,7 +5,7 @@ import EventsNavigation from "./events-navigation/EventsNavigation";
 import MainNavigation from "./main-navigation/MainNavigation";
 import PageContent from "./page-content/PageContent";
 import NewsletterSignup from "./news-letter/NewsletterSignup";
-
+import AuthForm from "./auth-form/AuthForm";
 
 export {
   EventForm,
@@ -14,5 +14,6 @@ export {
   EventsNavigation,
   MainNavigation,
   PageContent,
-  NewsletterSignup
+  NewsletterSignup,
+  AuthForm,
 };
