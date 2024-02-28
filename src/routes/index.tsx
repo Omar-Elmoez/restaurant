@@ -8,6 +8,7 @@ import NewEventAction from "../actions/NewEvent";
 import DeleteEvent from "../actions/DeleteEvent";
 import NewsletterAction from "../actions/Newsletter";
 import AuthenticationPage from "../pages/Authentication";
+import authAction from "../actions/Auth";
 
 const Routes = () => {
   // const MainRoutes = [
@@ -117,6 +118,7 @@ const Routes = () => {
         {
           path: 'auth',
           element: <AuthenticationPage />,
+          action: authAction,
         },
       ],
     },
