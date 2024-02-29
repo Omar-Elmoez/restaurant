@@ -22,6 +22,11 @@ function AuthForm() {
     <>
       <Form method="post" className={classes.form}>
         <h1>{isLogin ? "Log in" : "Create a new user"}</h1>
+        {data && data.errors && (
+          <p style={{ color: "red", fontWeight: "bold", textAlign: "center" }}>
+            {data.errors.credentials}
+          </p>
+        )}
         <p>
           <label htmlFor="email">Email</label>
           <input id="email" type="email" name="email" required />

@@ -1,6 +1,10 @@
 import { ActionFunction, json, redirect } from "react-router-dom";
+import getAuthToken from "../utils/auth";
 
 const NewEventAction: ActionFunction = async ({ request, params }) => {
+
+  const token = getAuthToken();
+
   const data = await request.formData();
   
   const eventData = {
@@ -19,7 +23,8 @@ const NewEventAction: ActionFunction = async ({ request, params }) => {
   const response = await fetch(url, {
     method: request.method,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token,
     },
     body: JSON.stringify(eventData)
   })

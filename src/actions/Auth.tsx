@@ -19,6 +19,12 @@ const authAction: ActionFunction = async ({ request }) => {
     body: JSON.stringify(userData)
   })
 
+  const data2 = await response.json() as { token: string }
+  const token = data2.token
+
+  localStorage.setItem('token', token);
+
+
   if (response.status === 422 || response.status === 401) {
     return response
   }
