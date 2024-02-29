@@ -6,13 +6,14 @@ import {
 } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 import { NewsletterSignup } from "..";
+import Logout from "../../utils/Logout";
 
 function MainNavigation() {
   const token = useRouteLoaderData("root") as string;
   const navigate = useNavigate();
   function handleLogout() {
-    localStorage.removeItem("token");
-    return navigate("/");
+    Logout();
+    return navigate("/auth?mode=login");
   }
 
   return (
