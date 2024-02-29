@@ -7,12 +7,15 @@ const DeleteEvent: ActionFunction = async ({ params, request }) => {
     // method: "DELETE"
     method: request.method,
     headers: {
-      'Authorization': 'Bearer ' + token
-    }
+      Authorization: "Bearer " + token,
+    },
   });
 
   if (!response.ok) {
-    throw json({ message: "You're not allowed to delete this event" }, { status: 500 });
+    throw json(
+      { message: "You're not allowed to delete this event" },
+      { status: 500 }
+    );
   }
 
   return redirect("/events");

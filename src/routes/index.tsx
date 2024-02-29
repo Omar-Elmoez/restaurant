@@ -9,6 +9,7 @@ import DeleteEvent from "../actions/DeleteEvent";
 import NewsletterAction from "../actions/Newsletter";
 import AuthenticationPage from "../pages/Authentication";
 import authAction from "../actions/Auth";
+import tokenLoader from "../loaders/Token";
 
 const Routes = () => {
   // const MainRoutes = [
@@ -72,6 +73,8 @@ const Routes = () => {
       path: "/",
       element: <RootLayout />,
       errorElement: <ErrorPage />,
+      loader: tokenLoader,
+      id: 'root',
       children: [
         {
           index: true,
