@@ -1,8 +1,13 @@
-import { NavLink } from "react-router-dom";
+import { Form, NavLink, redirect } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 import { NewsletterSignup } from "..";
 
 function MainNavigation() {
+  function handleLogout() {
+    localStorage.removeItem("token");
+    return redirect("/");
+  }
+
   return (
     <header className={classes.header}>
       <nav>
@@ -47,6 +52,11 @@ function MainNavigation() {
             >
               Authentication
             </NavLink>
+          </li>
+          <li>
+            <Form>
+              <button onClick={handleLogout}>Logout</button>
+            </Form>
           </li>
         </ul>
       </nav>
