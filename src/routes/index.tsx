@@ -10,6 +10,7 @@ import NewsletterAction from "../actions/Newsletter";
 import AuthenticationPage from "../pages/Authentication";
 import authAction from "../actions/Auth";
 import tokenLoader from "../loaders/Token";
+import checkAuthLoader from "../loaders/CheckAuth";
 
 const Routes = () => {
   // const MainRoutes = [
@@ -102,7 +103,8 @@ const Routes = () => {
                 {
                   path: "edit",
                   element: <EditEvent />,
-                  action: NewEventAction
+                  action: NewEventAction,
+                  loader: checkAuthLoader,
                 },
               ]
             },
@@ -110,6 +112,7 @@ const Routes = () => {
               path: "new",
               element: <NewEvent />,
               action: NewEventAction,
+              loader: checkAuthLoader,
             },
           ],
         },
